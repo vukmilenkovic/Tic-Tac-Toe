@@ -4,8 +4,6 @@ function Gameboard(){
     ["", "", ""],
     ["", "", ""]
     ];
-
-
     function player(name, symbol){
 
         console.log(`Hey player1 '${name}' you chose to be the symbol: ${symbol}`);
@@ -24,6 +22,7 @@ function Gameboard(){
 
     }
     function drawBoard(x, y, symbol){
+        checkwinner();
         gameboard[x][y] = symbol;
         // console.clear();
         gameboard.forEach((row, i) => {
@@ -45,19 +44,18 @@ function playGame(){
 
     // Receive coordinates
     board.drawBoard(0, 0, player1.symbol);
-    board.checkwinner();
+    
     console.clear();
     board.drawBoard(1, 0, player2.symbol);
-    board.checkwinner();
+    
     board.drawBoard(0, 1, player1.symbol);
-    board.checkwinner();
+    
     board.drawBoard(2, 1, player2.symbol);
-    board.checkwinner();
+    
     console.clear();
     board.drawBoard(0, 2, player1.symbol);
-    board.checkwinner();
     board.drawBoard(0, 1, player2.symbol);
-    board.checkwinner();
+    
     
 };
 
