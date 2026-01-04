@@ -38,20 +38,34 @@ function Gameboard(){
 
 
 function playGame(){
+    const player1 = "X";
+    const player2 = "O";
+    let playerMove = false;
 
+    const button = document.querySelectorAll('.square');
+    button.forEach(btn => {
+    btn.addEventListener('click', () => {
+        if(playerMove === false) {
+            btn.innerHTML = `<p>X</p>`;
+            console.log("Yo fagot");
+            return (playerMove = !playerMove);
+        } else {
+            btn.innerHTML = `<p>O</p>`;
+            console.log("Whatup bitch");
+            return (playerMove = !playerMove);
+            
+        }
+        
+    })
+})
     
     
 };
 
-const button = document.querySelectorAll('.square');
-button.forEach(btn => {
-    btn.addEventListener('click', () => {
-        console.log(`Btn ${btn.id} clicked`);
-    })
-})
 
 
-//playGame();
+
+playGame();
 
 
 
