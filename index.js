@@ -38,28 +38,20 @@ function Gameboard(){
 
 
 function playGame(){
-    const board = Gameboard();
-    const player1 = board.player("Vuk", "X");
-    const player2 = board.player("Hana", "Y");
 
-    // Receive coordinates
-    board.drawBoard(0, 0, player1.symbol);
-    
-    console.clear();
-    board.drawBoard(1, 0, player2.symbol);
-    
-    board.drawBoard(0, 1, player1.symbol);
-    
-    board.drawBoard(2, 1, player2.symbol);
-    
-    console.clear();
-    board.drawBoard(0, 2, player1.symbol);
-    board.drawBoard(0, 1, player2.symbol);
     
     
 };
 
-playGame();
+const button = document.querySelectorAll('.square');
+button.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log(`Btn ${btn.id} clicked`);
+    })
+})
+
+
+//playGame();
 
 
 
